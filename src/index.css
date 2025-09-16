@@ -1,1 +1,12 @@
+@font-face {
+  font-family: Bitcount;
+  src: url("../src/assets/fonts/BitcountGridDouble-VariableFont_CRSV\,ELSH\,ELXP\,slnt\,wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import "tailwindcss";
+
+@theme {
+  --font-bitcount: Bitcount, "sans-serif";
+}
