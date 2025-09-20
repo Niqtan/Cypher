@@ -3,10 +3,6 @@
   "name": "Cypher",
   "version": "1.0.0",
   "description": "Summarize webpages & note them with one click",
-  "background": {
-    "service-worker": "service-worker.ts",
-    "type": "module"
-  },
   "action": { 
     "default_popup": "index.html"
   }, 
