@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState} from 'react'
 import './App.css'
 
 import Heading from "./components/header.tsx"
@@ -6,10 +6,10 @@ import SummarizeBody from "./components/body.tsx"
 import SummarizeFooter from "./components/footer.tsx"
 
 
-import Summarize from "./components/logic.ts"
+import {Summarize} from "./components/logic.ts"
 
 function App() {
-  const [summary, setSummary] = useState<string | undefined>("")
+  const [summary, setSummary] = useState("")
   const [loading, setLoading] = useState(false)
 
   async function handleSummarize() {
@@ -23,9 +23,14 @@ function App() {
     setLoading(false)
   }
 
+  // async function handleGetSummary() {
+  //   const result = await getSummary() 
+  // }
+
+
 
   return (
-    <div className="absolute inset-0 h-screen w-full flex flex-col">
+    <div className=" overflow-hidden h-[500px] w-[400px] flex flex-col">
       <Heading />
       <SummarizeBody summary={summary} loading={loading}/>
       <footer>

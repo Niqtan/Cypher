@@ -5,8 +5,16 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: RobotoCondensed;
+  src: url("../src/assets/fonts/RobotoCondensed-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import "tailwindcss";
 
 @theme {
   --font-bitcount: Bitcount, "sans-serif";
+  --font-robotocondensed: RobotoCondensed, "sans-serif";
 }

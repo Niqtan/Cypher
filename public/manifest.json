@@ -7,8 +7,10 @@
     "default_popup": "index.html"
   }, 
   "permissions": [
+    "tabs",
     "scripting",
-    "storage"
+    "storage",
+    "downloads"
   ],
   "host_permissions": [
     "http://*/*",
