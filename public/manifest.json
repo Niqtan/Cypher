@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "description": "Summarize webpages & note them with one click",
   "action": { 
+    "default_icon": {
+      "128": "Cypher.png"
+    },
     "default_popup": "index.html"
   }, 
   "permissions": [
@@ -17,6 +20,6 @@
     "https://*/*"
   ],
   "icons": {
-    "32": "bill.jpg"
+    "128": "Cypher.png"
   }
 }

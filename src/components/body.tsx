@@ -10,7 +10,7 @@ export default function AIBody({summary, loading}: {summary: string | undefined;
                     <p className="font-robotocondensed">Summarizing... Please Wait</p>
                 ): summary ? (
                     <div className="font-robotocondensed bg-[#2e2e2e] mt-16 p-4 flex  items-center">
-                        <img src="./cypher.jpg" className="w-10 mr-2" />
+                        <img src="./Cypher.png" className="w-10 mr-2" />
                         <TypeAnimation
                     sequence={[
                         '',
