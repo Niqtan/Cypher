@@ -4,7 +4,9 @@ const cors = require("cors")
 const express = require("express")
 
 const corsOptions = {
-  origin: ["http://localhost:5173"],
+  origin: ["http://localhost:5173",
+    "https://cypher-ft62e3vrj-niqs-projects-c135a7ed.vercel.app"
+  ],
 }
 
 const app = express()
