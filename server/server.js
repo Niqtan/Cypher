@@ -42,7 +42,4 @@ app.post('/summarize', async (req, res) => {
 })
 
 
-
-app.listen(3000, () => {
-    console.log("Port started in https://cypher-niqs-projects-c135a7ed.vercel.app/summarize")
-})
+module.exports = app
