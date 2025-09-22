@@ -15,7 +15,7 @@ export async function Summarize(): Promise<SummaryData> {
 
         const pageText = await getPageText(tab.id)
 
-        const response  = await fetch("http://localhost:3000/summarize", {
+        const response  = await fetch("https://cypher-niqs-projects-c135a7ed.vercel.app/summarize", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

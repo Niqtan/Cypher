@@ -42,5 +42,5 @@ app.post('/summarize', async (req, res) => {
 
 
 app.listen(3000, () => {
-    console.log("Port started in http://localhost:3000/summarize")
+    console.log("Port started in https://cypher-niqs-projects-c135a7ed.vercel.app/summarize")
 })
