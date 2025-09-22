@@ -1,69 +1,79 @@
 # Cypher
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![alt text](image.png)
 
-Currently, two official plugins are available:
+## Demonstration
+https://youtu.be/v4xISBDn3yg
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Aims
 
-## Expanding the ESLint configuration
+### "Finally I don't have to waste 10 extra seconds going to AI to explain this to me like I'm 5"
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Cypher is a webpage summarizer for the Chrome. Personally, I have been using a lot to self study so I made this QOL tool in order to reduce that amount of time. By being able to summarize blogs, news, and random pieces of information on the internet in a shorter amount of time, studying could be much more efficient now.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Before you say this is a ChatGPT wrapper, guess what... I added a feature, the ability to save the summaries in a markdown file. This feature is incredibly helpful for me because I use Obsidian a lot for my notes, and just being able to save these summaries really save my time a lot taking notes.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+![alt text](image-1.png)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Unfortunately, this still doesn't include a summarizer for PDFs
+
+## Contents of the Project
+
+In my proposed system, the frontend is called via clicking the chrome extension popup and then the user is presented with a UI.
+
+## How does it work?
+
+### Summarize Button
+When the user clicks on the summarize button, the system grabs the details of the webpage, including its contents, title, and url. Afterwards, it is then sent to the backend server which contains a Groq API hosted on Vercel. Finally, Groq summarizes the webpage's contents and it is sent to the frontend to be read by the user. 
+
+### Export to Markdown
+After finalizing the summary, the user can choose whether to export the summary into a formatted markdown file or not by using the Chrome API. 
+
+## Installation
+
+### To use this extension locally (sorry I'm broke for the chrome developer web store):
+
+```
+Unzip the folder
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Make sure you are in the relative directory of the folder
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+cd \Cypher\
+```
+
+```
+npm install
+```
+
+```
+npm run build
+```
+
+Open Chrome and go to:
+
+```
+chrome://extensions/
+```
+
+Enable developer mode and click load unpacked. Afterwards, select the dist/ folder.
+
+Done! You may start using the extension now.
+
+## Project Status
+The project is currently complete. I will try to add more features if I need them. However, in the current state, I am content with how this has turned out, and I believe this will help me a lot in the future.
+
+## Support
+
+For questions, suggestions, or collaborations, feel free to contact the engineeer:
+
+Niq Suguitan
+
+- Github: @Niqtan
+
+- Slack User: @Niq
+
+- Email: niqban123@gmail.com
+
+Thank you for checking out Cypher!

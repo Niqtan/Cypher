@@ -20,6 +20,8 @@
     "https://*/*"
   ],
   "icons": {
+    "16": "Cypher.png",
+    "48": "Cypher.png",
     "128": "Cypher.png"
   }
 }
