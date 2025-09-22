@@ -1,24 +1,15 @@
-require("dotenv").config()
 const Groq = require("groq-sdk")
-const cors = require("cors")
-const express = require("express")
 
-const corsOptions = {
-  origin: ["http://localhost:5173",
-    "https://cypher-1wc7u5n7t-niqs-projects-c135a7ed.vercel.app"
-  ],
-}
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({error: "Method not allowed"})
+  }
+  
+  try {
+     const { text } = req.body //This is the pageText variable
 
-const app = express()
-app.use(cors(corsOptions))
-app.use(express.json())
-
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
-
-app.post('/', async (req, res) => {
-  const { text } = req.body //This is the pageText variable
-
-  try {    
+    const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+    
     const chatCompletion  = await groq.chat.completions.create({
       messages: [
         {
@@ -34,12 +25,11 @@ app.post('/', async (req, res) => {
     });
 
     const summary = chatCompletion.choices[0]?.message?.content || "No summary generated.";
-    res.json({summary})
+    res.status(500).json({summary})
   }
   catch (err) {
-    console.error("Groq fucked up lmao: ", err)
+    console.error("API Error: ", err)
+    res.status(500).json({error: "Something went wrong"})
   }
-})
+}
 
-
-module.exports = app
