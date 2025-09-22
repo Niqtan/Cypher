@@ -1,6 +1,6 @@
 # Cypher
 
-![alt text](image.png)
+![alt text](public/image.png)
 
 ## Demonstration
 https://youtu.be/v4xISBDn3yg
@@ -13,7 +13,7 @@ Cypher is a webpage summarizer for the Chrome. Personally, I have been using a l
 
 Before you say this is a ChatGPT wrapper, guess what... I added a feature, the ability to save the summaries in a markdown file. This feature is incredibly helpful for me because I use Obsidian a lot for my notes, and just being able to save these summaries really save my time a lot taking notes.
 
-![alt text](image-1.png)
+![alt text](public/image-1.png)
 
 Unfortunately, this still doesn't include a summarizer for PDFs
 
@@ -33,11 +33,9 @@ After finalizing the summary, the user can choose whether to export the summary 
 
 ### To use this extension locally (sorry I'm broke for the chrome developer web store):
 
-```
-Unzip the folder
-```
-
-Make sure you are in the relative directory of the folder
+#### 1. Build the Extension Locally 
+- Unzip the folder
+- Make sure you are in the relative directory of the folder
 
 ```
 cd \Cypher\
@@ -51,15 +49,14 @@ npm install
 npm run build
 ```
 
-Open Chrome and go to:
-
+#### 2. Use the extension locally
+- Open Chrome and go to:
 ```
 chrome://extensions/
 ```
 
-Enable developer mode and click load unpacked. Afterwards, select the dist/ folder.
-
-Done! You may start using the extension now.
+- Enable developer mode and click load unpacked. Afterwards, select the dist/ folder.
+- Done! You may start using the extension now.
 
 ## Project Status
 The project is currently complete. I will try to add more features if I need them. However, in the current state, I am content with how this has turned out, and I believe this will help me a lot in the future.
