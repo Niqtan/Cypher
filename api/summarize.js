@@ -32,7 +32,7 @@ export default async function handler(req, res) {
   }
   catch (err) {
     console.error("API Error: ", err)
-    res.status(500).json({error: "Something went wrong"})
+    res.status(404).json({error: "Something went wrong"})
   }
 }
 
