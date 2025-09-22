@@ -1,6 +1,6 @@
 const Groq = require("groq-sdk")
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({error: "Method not allowed"})
   }
@@ -25,7 +25,7 @@ module.exports = async function handler(req, res) {
     });
 
     const summary = chatCompletion.choices[0]?.message?.content || "No summary generated.";
-    res.status(500).json({summary})
+    res.status(200).json({summary})
   }
   catch (err) {
     console.error("API Error: ", err)
