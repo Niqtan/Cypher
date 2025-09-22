@@ -20,6 +20,12 @@ function App() {
         
     if (result) {
       setSummaryData(result)
+      
+      if (result.summary) {
+        const speak = new SpeechSynthesisUtterance(result.summary)
+        speak.rate = 1.5
+        window.speechSynthesis.speak(speak)
+      }
     }
 
     setLoading(false)
@@ -38,10 +44,12 @@ function App() {
 
 
   return (
-    <div className=" overflow-hidden h-[500px] w-[400px] flex flex-col">
+    <div className="w-full h-full m-0 p-0 flex flex-col">
       <Heading />
-      <SummarizeBody summary={summaryData?.summary ?? ""} loading={loading}/>
-      <footer>
+      <div className="overflow-auto">
+        <SummarizeBody summary={summaryData?.summary ?? ""} loading={loading}/>
+      </div>
+      <footer >
         <SummarizeFooter onSummarize={handleSummarize} onExportMarkdown={handleExportMarkdown}/>
       </footer>
     </div>
