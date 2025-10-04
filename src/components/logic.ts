@@ -18,6 +18,7 @@ export async function Summarize(): Promise<SummaryData> {
         const response  = await fetch("https://cypher-1amv20ht3-niqs-projects-c135a7ed.vercel.app/api/summarize", {
             method: "POST",
             headers: {
+                "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
                 "Content-Type": "application/json",
             },
             body:  JSON.stringify({text: pageText.text})

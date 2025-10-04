@@ -21,7 +21,7 @@ export default async function handler(req, res) {
         },
         {
           role: "user",
-          content: `Summarize the text on the webpage and talk like you're cypher from valorant into two sentences: \n\n${text}`
+          content: `Summarize the text on the webpage and explain it like im 5 years old into two sentences: \n\n${text}`
         },
       ],
       model: "openai/gpt-oss-20b",
