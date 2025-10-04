@@ -45,8 +45,6 @@ cd \Cypher\
 npm install
 ```
 
-- Create a .env file in the root directory
-
 ```
 npm run build
 ```
