@@ -28,18 +28,18 @@ You are given:
 2. Optional linked article contents (depth 1 — links directly referenced in the main article).
 
 Your goal:
-- Create a clear, detailed summary (2–4 paragraphs).
+- Create a clear, detailed summary (3–5 setences).
 - Include the main points, arguments, and examples.
 - When relevant, use information from the linked articles to explain terms or context mentioned in the main article.
 - Do NOT just list headings or bullet points — write a cohesive narrative.
 - Avoid unnecessary filler text or phrases like “In conclusion.”
-
 Structure your output as follows:
----
-**Main Summary:**
-<your 2–4 paragraph summary here>
 
-**Key Takeaways:**
+---
+Main Summary:
+
+
+\n\nKey Takeaways:
 • Point 1  
 • Point 2  
 • Point 3  
